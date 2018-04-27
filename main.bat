@@ -1,48 +1,48 @@
 @echo off & setlocal enabledelayedexpansion
-title BAT - VBoxManage Îá°®ÆÆ½â www.52pojie.cn
+title BAT - VBoxManage å¾çˆ±ç ´è§£ www.52pojie.cn
 mode con: cols=60 lines=20
 
-::¼ì²âVBoxManageÊÇ·ñ¿ÉÓÃ
+::æ£€æµ‹VBoxManageæ˜¯å¦å¯ç”¨
 :checkVirtualBoxPath
 echo %path%|findstr /i "VirtualBox">nul && goto :menu
 goto :addVirtualBoxPath
 
-::½«VirtualBoxÌí¼Óµ½»·¾³±äÁ¿ÖĞ
+::å°†VirtualBoxæ·»åŠ åˆ°ç¯å¢ƒå˜é‡ä¸­
 :addVirtualBoxPath
 cls
-echo.¼ì²âµ½ÄúÃ»ÓĞ½«VirtualBoxµÄ°²×°Â·¾¶Ìí¼Óµ½path±äÁ¿ÖĞ¡£
-set /p yesorno=ÊÇ·ñ½«ÆäÌí¼Ó£¿(yes or no)
+echo.æ£€æµ‹åˆ°æ‚¨æ²¡æœ‰å°†VirtualBoxçš„å®‰è£…è·¯å¾„æ·»åŠ åˆ°pathå˜é‡ä¸­ã€‚
+set /p yesorno=æ˜¯å¦å°†å…¶æ·»åŠ ï¼Ÿ(yes or no)
 cls
 if %yesorno% == yes (
-    echo.ÇëÊäÈëÍêÕûÂ·¾¶»òÕß½«VirtualBoxÎÄ¼ş¼ĞÍÏÈë´°¿Ú
-    echo.:½¨ÒéÖ±½Ó½«VirtualBoxÎÄ¼ş¼ĞÍÏÈë´°¿Ú
+    echo.è¯·è¾“å…¥å®Œæ•´è·¯å¾„æˆ–è€…å°†VirtualBoxæ–‡ä»¶å¤¹æ‹–å…¥çª—å£
+    echo.:å»ºè®®ç›´æ¥å°†VirtualBoxæ–‡ä»¶å¤¹æ‹–å…¥çª—å£
     set /p VirtualBoxPath=:
     set path=%path%;!VirtualBoxPath!
     goto :checkVirtualBoxPath
 )
 exit
 
-::Ö÷²Ëµ¥
+::ä¸»èœå•
 :menu
-title BAT - VBoxManage Îá°®ÆÆ½â www.52pojie.cn
+title BAT - VBoxManage å¾çˆ±ç ´è§£ www.52pojie.cn
 cls
 echo.------------------------------------------------------------
-echo. 1.²é¿´ËùÓĞĞéÄâ»ú
-echo. 2.²é¿´ÕıÔÚÔËĞĞµÄĞéÄâ»ú
-echo. 3.Æô¶¯ĞéÄâ»ú
-echo. 4.¿ªÆôĞéÄâ»úºóÌ¨ÔËĞĞ
-echo. 5.¹Ø±ÕĞéÄâ»ú
-echo. 6.Ç¿ÖÆ¹Ø±ÕĞéÄâ»ú
-echo. 7.¿ªÆôĞéÄâ»ú²¢¿ªÆôĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó
-echo. 8.¸Ä±äĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó¶Ë¿Ú
-echo. 9.¸ü¶à...
-echo. 0.ÍË³ö
+echo. 1.æŸ¥çœ‹æ‰€æœ‰è™šæ‹Ÿæœº
+echo. 2.æŸ¥çœ‹æ­£åœ¨è¿è¡Œçš„è™šæ‹Ÿæœº
+echo. 3.å¯åŠ¨è™šæ‹Ÿæœº
+echo. 4.å¼€å¯è™šæ‹Ÿæœºåå°è¿è¡Œ
+echo. 5.å…³é—­è™šæ‹Ÿæœº
+echo. 6.å¼ºåˆ¶å…³é—­è™šæ‹Ÿæœº
+echo. 7.å¼€å¯è™šæ‹Ÿæœºå¹¶å¼€å¯è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥
+echo. 8.æ”¹å˜è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥ç«¯å£
+echo. 9.æ›´å¤š...
+echo. 0.é€€å‡º
 echo.------------------------------------------------------------
 
-::µÈ´ıÊäÈë
+::ç­‰å¾…è¾“å…¥
 :inputNum
-if exist "%SystemRoot%\System32\choice.exe" goto :choice
-set /p num=ÇëÊäÈëÊı×Ö²¢°´»Ø³µ¼üÈ·ÈÏ:
+::if exist "%SystemRoot%\System32\choice.exe" goto :choice
+set /p num=è¯·è¾“å…¥æ•°å­—å¹¶æŒ‰å›è½¦é”®ç¡®è®¤:
 if %num%==1 goto :lsAll
 if %num%==2 goto :lsRuning
 if %num%==3 goto :startVms
@@ -54,11 +54,11 @@ if %num%==8 goto :changeVmsVrapPort
 if %num%==9 goto :more
 if %num%==0 goto :end
 cls
-echo ÄúÊäÈëÓĞÎó£¬ÇëÖØĞÂÑ¡Ôñ¡£
+echo æ‚¨è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°é€‰æ‹©ã€‚
 ping 127.0.1 -n "2">nul
 goto :menu
 :choice
-choice /c 12345678 /n /m "ÇëÊäÈëÏàÓ¦Êı×Ö£º"
+choice /c 12345678 /n /m "è¯·è¾“å…¥ç›¸åº”æ•°å­—ï¼š"
 if errorlevel 1 goto :lsAll
 if errorlevel 2 goto :lsRuning
 if errorlevel 3 goto :startVms
@@ -72,104 +72,104 @@ if errorlevel 0 goto :end
 goto :menu
 pause>nul & exit
 
-::²é¿´ËùÓĞĞéÄâ»ú
+::æŸ¥çœ‹æ‰€æœ‰è™šæ‹Ÿæœº
 :lsAll
-title ²é¿´ËùÓĞĞéÄâ»ú
+title æŸ¥çœ‹æ‰€æœ‰è™šæ‹Ÿæœº
 cls
 echo.------------------------------------------------------------
 VBoxManage list vms
 echo.------------------------------------------------------------
 goto :back
 
-::²é¿´ÕıÔÚÔËĞĞµÄĞéÄâ»ú
+::æŸ¥çœ‹æ­£åœ¨è¿è¡Œçš„è™šæ‹Ÿæœº
 :lsRuning
-title ²é¿´ÕıÔÚÔËĞĞµÄĞéÄâ»ú
+title æŸ¥çœ‹æ­£åœ¨è¿è¡Œçš„è™šæ‹Ÿæœº
 cls
 echo.------------------------------------------------------------
 VBoxManage list runningvms
 echo.------------------------------------------------------------
 goto :back
 
-::¿ªÆôĞéÄâ»ú
+::å¼€å¯è™šæ‹Ÿæœº
 :startVms
-title ¿ªÆôĞéÄâ»ú
+title å¼€å¯è™šæ‹Ÿæœº
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ: 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°: 
 echo.------------------------------------------------------------
 VBoxManage startvm %name%
 echo.------------------------------------------------------------
 goto :back
 
-::¿ªÆôĞéÄâ»úºóÌ¨ÔËĞĞ
+::å¼€å¯è™šæ‹Ÿæœºåå°è¿è¡Œ
 :startVmsTypeHeadless
-title ¿ªÆôĞéÄâ»úºóÌ¨ÔËĞĞ
+title å¼€å¯è™šæ‹Ÿæœºåå°è¿è¡Œ
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ: 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°: 
 echo.------------------------------------------------------------
 VBoxManage startvm %name% --type headless
 echo.------------------------------------------------------------
 goto :back
 
-::¹Ø±ÕĞéÄâ»ú
+::å…³é—­è™šæ‹Ÿæœº
 :stopVms
-title ¹Ø±ÕĞéÄâ»ú
+title å…³é—­è™šæ‹Ÿæœº
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ: 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°: 
 echo.------------------------------------------------------------
 VBoxManage controlvm %name% acpipowerbutton
 echo.------------------------------------------------------------
 goto :back
 
-::Ç¿ÖÆ¹Ø±ÕĞéÄâ»ú
+::å¼ºåˆ¶å…³é—­è™šæ‹Ÿæœº
 :vmsPoweroff
-title Ç¿ÖÆ¹Ø±ÕĞéÄâ»ú
+title å¼ºåˆ¶å…³é—­è™šæ‹Ÿæœº
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ: 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°: 
 echo.------------------------------------------------------------
 VBoxManage controlvm %name% poweroff
 echo.------------------------------------------------------------
 goto :back
 
-::¿ªÆôĞéÄâ»ú²¢¿ªÆôĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó
+::å¼€å¯è™šæ‹Ÿæœºå¹¶å¼€å¯è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥
 :vrdp
-title ¿ªÆôĞéÄâ»ú²¢¿ªÆôĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó
+title å¼€å¯è™šæ‹Ÿæœºå¹¶å¼€å¯è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ(Ä¬ÈÏ¶Ë¿Ú:3389): 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°(é»˜è®¤ç«¯å£:3389): 
 echo.------------------------------------------------------------
 VBoxManage startvm %name% --type vrdp
 echo.------------------------------------------------------------
 goto :back
 
-::¸Ä±äĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó¶Ë¿Ú
+::æ”¹å˜è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥ç«¯å£
 :changeVmsVrapPort
-title ¸Ä±äĞéÄâ»úµÄÔ¶³Ì×ÀÃæÁ¬½Ó¶Ë¿Ú
+title æ”¹å˜è™šæ‹Ÿæœºçš„è¿œç¨‹æ¡Œé¢è¿æ¥ç«¯å£
 cls
-set /p name=ÇëÊäÈëĞéÄâ»úÃû³Æ: 
-set /p port=ÇëÊäÈë¶Ë¿Ú:: 
+set /p name=è¯·è¾“å…¥è™šæ‹Ÿæœºåç§°: 
+set /p port=è¯·è¾“å…¥ç«¯å£:: 
 echo.------------------------------------------------------------
 VBoxManage controlvm %name% vrdpprot %port%
 echo.------------------------------------------------------------
 goto :back
 
-::¸ü¶à
+::æ›´å¤š
 :more
-title ¸ü¶à
+title æ›´å¤š
 cls
 echo.------------------------------------------------------------
-echo. ×ÔĞĞÍøÉÏËÑË÷»òÕßÔÚ¿ØÖÆÌ¨ÊäÈë VBoxManage -h
+echo. è‡ªè¡Œç½‘ä¸Šæœç´¢æˆ–è€…åœ¨æ§åˆ¶å°è¾“å…¥ VBoxManage -h
 echo.------------------------------------------------------------
 goto :back
 
-::·µ»Ø²Ëµ¥
+::è¿”å›èœå•
 :back
 echo.
-echo.°´ÈÎÒâ¼ü·µ»Ø²Ëµ¥ & pause>nul
+echo.æŒ‰ä»»æ„é”®è¿”å›èœå• & pause>nul
 goto :menu
 
 ::exit
 :end
-cls & echo Ğ»Ğ»Ê¹ÓÃ£¡
+cls & echo è°¢è°¢ä½¿ç”¨ï¼
 ping 127.0.1 -n "2">nul
 exit
 
-::³ö×Ô Îá°®ÆÆ½â www.52pojie.cn 52P
+::å‡ºè‡ª å¾çˆ±ç ´è§£ www.52pojie.cn 52P
