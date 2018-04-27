@@ -36,7 +36,7 @@ echo. 7.改变虚拟机的远程桌面连接端口
 echo. 8.退出
 echo.------------------------------------------------------------
 
-REM if exist "%SystemRoot%\System32\choice.exe" goto :choice
+if exist "%SystemRoot%\System32\choice.exe" goto :choice
 set /p choice=请输入数字并按回车键确认:
 if %choice%==8 goto :end
 cls
