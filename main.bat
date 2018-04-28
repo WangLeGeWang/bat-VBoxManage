@@ -1,5 +1,5 @@
 @echo off & setlocal enabledelayedexpansion
-title BAT - VBoxManage 吾爱破解 www.52pojie.cn
+title BAT - VBoxManage
 mode con: cols=60 lines=20
 
 ::检测VBoxManage是否可用
@@ -24,7 +24,7 @@ exit
 
 ::主菜单
 :menu
-title BAT - VBoxManage 吾爱破解 www.52pojie.cn
+title BAT - VBoxManage
 cls
 echo.------------------------------------------------------------
 echo. 1.查看所有虚拟机
@@ -41,7 +41,7 @@ echo.------------------------------------------------------------
 
 ::等待输入
 :inputNum
-::if exist "%SystemRoot%\System32\choice.exe" goto :choice
+REM if exist "%SystemRoot%\System32\choice.exe" goto :choice
 set /p num=请输入数字并按回车键确认:
 if %num%==1 goto :lsAll
 if %num%==2 goto :lsRuning
@@ -162,6 +162,7 @@ goto :back
 
 ::返回菜单
 :back
+set num=nul
 echo.
 echo.按任意键返回菜单 & pause>nul
 goto :menu
@@ -171,5 +172,3 @@ goto :menu
 cls & echo 谢谢使用！
 ping 127.0.1 -n "2">nul
 exit
-
-::出自 吾爱破解 www.52pojie.cn 52P
